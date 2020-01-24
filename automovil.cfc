@@ -1,11 +1,11 @@
-component name="automovil" {
+component name="automovil" {//receptor
 
     public function init(){
         return this;
     }
 
     public void function apagar(){
-        WriteOutput("apaga el auto");
+        WriteOutput("apaga el auto");//metodos los cuales pide el cliente
     }
 
     public void function encender(){

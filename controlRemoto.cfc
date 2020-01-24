@@ -1,42 +1,16 @@
-component name="controlRemoto"{
+component name="controlRemoto"{//este es el invoker este es el archivo que contiene todos los comandos
 
-    property name="comandos" type="Icommand";
-    
-    public function init(){
-        return this;
-    }
-    public function control(Icommand comandos){
-        variables.comandos = comandos;
-        return this;
-    }
+    property name="comandos";//variables de clase
 
-    public function controlRemoto( automovil comandos ){
-        
-        return variables.comandos.execute();  
+    public function init( automovil auto ){//constructor
+        variables.comandos[1] = new comandoApagar( auto );//le paso objeto automovil
+        variables.comandos[2] = new comandoEncender( auto );//instanciamos component comandoEncender
+        variables.comandos[3] = new comandoEncenderA( auto );
+        variables.comandos[4] = new comandoApagarA( auto );
+        return this;
     }
 
     public void function boton(pIndice){
-
-        switch(pIndice){
-            case 1:
-                comandos = new comandoApagar(pIndice);
-            break;
-            case 2:
-                comandos = new comandoEncender(pIndice);
-            break;
-            case 4:
-                comandos = new comandoApagarA(pIndice);
-            break;
-            case 3:
-                comandos = new comandoEncenderA(pIndice);
-            break;
-        
-            default:
-                code;
-            break;
-        }
-
-        
+        variables.comandos[pIndice].execute();//va al metodo del component comandoEncender 
     }
-
 }

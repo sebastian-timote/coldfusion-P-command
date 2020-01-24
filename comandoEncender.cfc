@@ -1,19 +1,14 @@
 component name="comandoEncender" implements="Icommand"{
 
-    //property name="auto" type="automovil";
-    public function init(){
-        return this;
-    }
+    property name="auto" type="automovil";
 
-    auto = new automovil();
-    public function comandoEncender( automovil auto){
+    public function init(automovil auto){
         variables.auto = auto;
         return this;
     }
 
     public void function execute(){
-        auto.encender();
-
+        variables.auto.encender();
     }
 
 }

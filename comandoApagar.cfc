@@ -1,19 +1,14 @@
 component name="comandoApagar" implements="Icommand"{
 
-    //property name="auto" type="automovil";
-    public function init(){
-        return this;
-    }
+    property name="auto" type="automovil";//variable de clase
 
-    auto = new automovil();
-    public function comandoApagar( automovil auto){
+    public function init(automovil auto){
         variables.auto = auto;
         return this;
     }
 
-    public void function execute(){
-        auto.apagar();
-
+    public void function execute(){//va al metodo de component automovil 
+        variables.auto.apagar();
     }
 
 }

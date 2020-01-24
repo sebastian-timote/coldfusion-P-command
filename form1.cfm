@@ -7,18 +7,19 @@
     <title>miniPage</title>
 </head>
 <body>
-<form id= "frm_firstForm" name= "frm_firstForm" method= "post" action= "formAction.cfm">
+<form name= "frm_firstForm" method= "post" action= "formAction.cfm"><!---envia metodo post al archivo formAction.cfm--->
+
     <p>
         <p>escoge funcion del carro</p>
-        <select name="fld_selectFun" id="fld_selectFun" >
-            <option value="1" selected>1. apagar</option>
+        <select name="fld_selectFun" >
+            <option value="1" selected>1. apagar</option>           <!---envia select escogido en este caso--->
             <option value="2">2. encender</option>
             <option value="3">3. activar</option>
             <option value="4">4. desactivar</option>
         </select>
-        
     </p>
-        <input type= "submit" name= "fld_submitForm" id= "fld_submitform1" value= "submit"/>
+
+        <input type= "submit" name= "fld_submitForm" value= "submit"/><!---boton enviar--->
 
 </form>
     
